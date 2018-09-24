@@ -7,9 +7,3 @@ Forked from [date-input-polyfill](https://github.com/jcgertig/date-input-polyfil
 
 ## Install
 `npm install --save date-input-polyfill-react`
-
-## Features
-* **Localization:** Specify the datepicker's locale by setting the
-`lang` attribute of the `input` element.  The default locale is `en`.
-
-    `<input type="date" lang="en" />`
