@@ -38,7 +38,11 @@ export default class Input {
             return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
           },
           set: val => {
-            this.element.value = dateFormat(val, this.format);
+            //this.element.value = dateFormat(val, this.format);
+
+            // required for react >= v15.6.0
+            let native_setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+            native_setter.call(this.element, dateFormat(val, this.format));
           }
         },
         'valueAsNumber': {
